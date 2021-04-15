@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from movies.models import *
 
 
@@ -21,7 +21,11 @@ def index(request):
     """ Pomocí metody render vyrendrujeme šablonu index.html a předáme ji hodnoty v proměnné context k zobrazení """
     return render(request, 'index.html', context=context)
 
+class FilmListView(ListView):
+    model = Film
 
+    context_object_name = 'film_detail'
+    template_name = 'film/list.html'
 
 class FilmDetailView(DetailView):
     model = Film
