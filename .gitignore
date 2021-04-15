@@ -1,2 +1,4 @@
-./.idea
-./.gitignore
+.idea
+.gitignore
+./movies/static/
+./movies/templates/film/list.html
